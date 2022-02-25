@@ -16,6 +16,16 @@ const theme = createTheme({
         disableElevation: true,
       },
     },
+    MuiInputBase: {
+      defaultProps: {
+        color: "secondary"
+      }
+    },
+    MuiInputLabel: {
+      defaultProps: {
+        color: "secondary"
+      }
+    }
   },
 });
 

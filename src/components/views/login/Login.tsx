@@ -7,16 +7,17 @@ const Login = () => {
   return (
     <div id="Login">
       <Container maxWidth="sm">
-        <img src={Logo}></img>
+        <img src={Logo} alt="logo"></img>
         <form>
-          <TextField sx={{ mt: '1rem' }} fullWidth id="outlined-basic" label="Email" type="email" variant="outlined" />
-          <TextField sx={{ mt: '1rem' }} fullWidth id="outlined-basic" label="Contraseña" variant="outlined" type="password" />
+          <TextField sx={{ mt: '2rem' }} fullWidth label="Email" type="email" variant="filled" />
+          <TextField sx={{ mt: '2rem' }} fullWidth label="Contraseña" variant="filled" type="password" />
           <Button
-            sx={{ mt: '1rem', py: "0.75rem" }}
+            sx={{ mt: '2rem', py: "0.75rem" }}
             fullWidth
             variant="contained"
             size="large"
             type="submit"
+            color="secondary"
           >
             Login
           </Button>
