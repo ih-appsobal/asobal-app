@@ -1,4 +1,4 @@
 body {
-  /* background-color: var(--c-background) !important; */
+  background-color: var(--c-background) !important;
   min-height: 100vh;
 }
