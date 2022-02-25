@@ -1,14 +1,21 @@
 import React from 'react';
-import { Button, Container, TextField } from '@mui/material';
+import { Button, Container, TextField, MenuItem } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Logo from  '../../../assets/img/logo.png'
 import './Register.css'
+import { countries } from '../../../constants';
 
 const Register = () => {
+  const [country, setCountry] = React.useState("");
+
+  const handleChange = (event: any) => {
+    setCountry(event.target.value);
+  };
+
   return (
     <div id="Register">
       <Container maxWidth="sm">
-        <img src={Logo}></img>
+        <img src={ Logo } alt="Logo de la app"></img>
         <form>
           <TextField sx={{ mt: '1rem' }} fullWidth id="outlined-basic" label="Nombre" variant="outlined" />
           <TextField sx={{ mt: '1rem' }} fullWidth id="outlined-basic" label="Email" type="email" variant="outlined" />
@@ -19,14 +26,15 @@ const Register = () => {
             id="outlined-select-currency"
             select
             label="País"
-            onChange={() => {}}
+            value={country}
+            onChange={handleChange}
             helperText="Please select your currency"
           >
-            {/* {currencies.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
+            {countries?.map((option: any) => (
+              <MenuItem key={option} value={option}>
+                {option}
               </MenuItem>
-            ))} */}
+            ))}
           </TextField>
           <Button
             sx={{ mt: '1rem', py: "0.75rem" }}
