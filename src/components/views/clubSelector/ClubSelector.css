@@ -1,0 +1,31 @@
+#ClubSelector .clubItem {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  margin: 0 auto;
+  background-color: rgba(73, 73, 73, 0.301);
+  padding: 0.5rem;
+  border: none;
+}
+
+#ClubSelector h1 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+#ClubSelector p {
+  margin-bottom: 3rem;
+}
+
+#ClubSelector .main-content {
+  position: absolute;
+  top: 0;
+}
+
+#ClubSelector .bg-overlay-selector {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+}
