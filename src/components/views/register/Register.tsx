@@ -18,7 +18,7 @@ const schema = yup.object().shape({
   email: yup.string().required("Introduce tu correo electrónico").email("Introduce un correo electrónico válido"),
   age: yup.number().typeError("Introduce tu edad").required("Introduce tu edad"),
   gender: yup.string().oneOf(GENDERS, "Elige una de las opciones anteriores").required("Elige una de las opciones anteriores"),
-  password: yup.string().required("Introduce tu contraseña").length(8, "Tu contraseña debe tener al menos 8 caracteres"),
+  password: yup.string().required("Introduce tu contraseña").test('len', "Tu contraseña debe tener al menos 8 caracteres", (val) => !!val && val.length >= 8),
   country: yup.string().required("Selecciona tu país").oneOf(COUNTRIES, "Selecciona tu país"),
   ccaa: yup.string().oneOf(CCAA, "Selecciona tu Comunidad Autónoma"),
 }).required();
