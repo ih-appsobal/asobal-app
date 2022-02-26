@@ -9,7 +9,7 @@ function PostRow({ post, small } : { post: Post, small?: boolean }) {
         <div className="card-content">
           <div className="card-img" style={{ backgroundImage: `url(${post.media})`}}>
           </div>
-          <CardContent>
+          <CardContent sx={{ backgroundColor: '#121212 !important'}} >
             <Typography className="PostRow-title" sx={{ mb: '0.15rem' }} color="textSecondary">
               {post.title}
             </Typography>

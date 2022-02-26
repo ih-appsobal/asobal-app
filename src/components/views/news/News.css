@@ -1,3 +1,8 @@
+
+#News > .css-1oqqzyl-MuiContainer-root {
+  overflow-x: hidden;
+}
+
 .scrolling-wrapper-flexbox {
   display: flex;
   flex-wrap: nowrap;
@@ -5,6 +10,7 @@
   margin-top: 0.5rem;
   overflow-y: hidden;
 }
+
 
 hr {
   margin: 0px;

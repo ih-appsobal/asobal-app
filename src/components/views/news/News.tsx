@@ -6,6 +6,7 @@ import MediaCard from '../../misc/PostCard/PostCard';
 import PostRow from '../../misc/PostRow/PostRow';
 import './News.css'
 import useTitle from '../../../hooks/useTitle';
+import PostVideoCard from '../../misc/PostCard/PostVideoCard';
 
 const News = () => {
   useTitle('Noticias')
@@ -35,19 +36,19 @@ const News = () => {
             <div className='news-divider'></div>
             <div className="scrolling-wrapper-flexbox" >
               {
-                posts.slice(5,9).map(post => {
-                  return post.visible && (<PostRow small post={post}/>)
+                posts.slice(5,9).map((post, i) => {
+                  return post.visible && (<PostRow key={i} small post={post}/>)
                 })
               }
             </div>
             <MediaCard post={posts[4]}/>
-            <MediaCard post={posts[5]}/>
+            <PostVideoCard post={posts[5]}/>
             <h1 className="mb-0">Para tí</h1>
             <div className='news-divider'></div>
             <div className="scrolling-wrapper-flexbox" >
               {
-                posts.slice(5,9).map(post => {
-                  return post.visible && (<PostRow small post={post}/>)
+                posts.slice(5,9).map((post, i) => {
+                  return post.visible && (<PostRow key={i} small post={post}/>)
                 })
               }
             </div>
@@ -55,9 +56,9 @@ const News = () => {
             <div className='news-divider'></div>
             <div style={{ marginTop: '0.5rem'}}>
               {
-                posts.slice(7,13).map(post => {
+                posts.slice(7,13).map((post, i) => {
                   return post.visible && (
-                    <div style={{ marginTop: '0.5rem'}}>
+                    <div key={i} style={{ marginTop: '0.5rem'}}>
                        <PostRow post={post}/>
                     </div>
                   )
