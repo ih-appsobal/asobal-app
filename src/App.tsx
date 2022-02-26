@@ -32,7 +32,7 @@ function App() {
             <Route path="news" element={<News />}/>
             <Route path="notifications" element={<Notifications />} />
           </Routes>
-          <Navbar/>
+          {/* <Navbar/> */}
         </BrowserRouter>
 
       </div>

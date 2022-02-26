@@ -70,7 +70,7 @@ const ClubSelector = () => {
                       variant="contained"
                       size="large"
                       type="submit"
-                      color="secondary"
+                      color="primary"
                     >
                       Continuar
                     </Button>
