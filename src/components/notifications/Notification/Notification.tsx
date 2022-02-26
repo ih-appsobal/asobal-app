@@ -11,27 +11,47 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import './Notification.css';
 import { TrendingUpOutlined } from '@mui/icons-material';
-
+import { deleteId, edit } from '../../../services/NotificationService';
 export interface NotificationProps {
-    url: string,
+    post: string,
     read: boolean,
+    id: string,
     message: string,
-    position?: number,
+    position?: number
 };
 
-const Notification = ({ url, read, message, position }: NotificationProps) => {
+const Notification = ({ post, id, read, message, position }: NotificationProps) => {
     const [deleting, setDeleting] = useState(false)
+    const [isRead, setIsRead] = useState(read)
     let navigate = useNavigate();
 
-    const handleRedirectPost = () => {
-        //patch
-        navigate(`/posts/${url}`)
-    }
+    const handleRedirectPost = async () => {
+        try {
+            await edit(id)
+            setIsRead(true)
+            navigate(`/app/noticias/${post}`)
+        } catch(err) {
+            console.error(err);
+        }
+    };
 
-    const handleDelete = () => {
-         //delete
-        setDeleting(true)
-     }
+    const handleRead = async () => {
+        try {
+          await edit(id)
+          setIsRead(true)
+        } catch(err) {
+          console.error(err);
+        }
+    };
+
+    const handleDelete = async () => {
+        try {
+            await deleteId(id)
+            setDeleting(true)
+          } catch(err) {
+            console.error(err);
+          }
+    }
 
     const classCalculate =() => {
         if (position === 0 || (position && position % 2 == 0)) {
@@ -54,7 +74,7 @@ const Notification = ({ url, read, message, position }: NotificationProps) => {
         >
             <ListItem alignItems="center">
             <ListItemAvatar>
-                {!read && (
+                {!isRead && (
                     <NotificationPoint />
                 )}
                 <Avatar
@@ -73,8 +93,8 @@ const Notification = ({ url, read, message, position }: NotificationProps) => {
             </ListItem>
             <div className="notification-actions">
                 <RemoveRedEyeIcon
-                    // onClick={() => patch a read}
-                    className={`${read ? 'eye-disabled' : ''}`}
+                    onClick={handleRead}
+                    className={`${isRead ? 'eye-disabled' : ''}`}
                 />
                 <DeleteOutlineIcon
                     onClick={handleDelete}

@@ -15,13 +15,15 @@ import MatchDetails from './components/views/matchDetails/MatchDetails';
 import Notifications from './components/views/notifications/Notifications';
 import RequireAuth from "./components/guards/RequireAuth";
 import AppContent from "./components/views/AppContent";
-
+import PostDetail from "./components/misc/PostDetail/PostDetail";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
 
   return (
       <div className="App">
         <BrowserRouter>
+        <ScrollToTop>
           <Routes>
             <Route path="iniciar-sesion" element={<Login />} />
             <Route path="registro" element={<Register />} />
@@ -29,6 +31,7 @@ function App() {
             <Route path="selecciona-equipo" element={<RequireAuth><ClubSelector /></RequireAuth>} />
             <Route path="app" element={<RequireAuth><AppContent/></RequireAuth>}>
               <Route index element={<News />}/>
+              <Route path="noticias/:id" element={<PostDetail />} />
               <Route path="equipo" element={<Club />} />
               <Route path="partidos" element={<Games />}/>
               <Route path="partidos/:id" element={<MatchDetails />}/>
@@ -36,8 +39,8 @@ function App() {
             </Route>
             <Route path="*" element={<Navigate to="/app" />} />
           </Routes>
+          </ScrollToTop>
         </BrowserRouter>
-
       </div>
   );
 }
