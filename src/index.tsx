@@ -7,12 +7,15 @@ import reportWebVitals from './reportWebVitals';
 import theme from './theme';
 import './assets/stylesheets/variables.css';
 import './index.css';
+import { UserContextProvider } from './contexts/AuthProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <CssBaseline />
     <ThemeProvider theme={theme}>
-      <App />
+      <UserContextProvider>
+        <App />
+      </UserContextProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
