@@ -9,16 +9,15 @@ import { Post } from '../../../services/PostService';
 import ShareIcon from '@mui/icons-material/Share';
 import './PostCard.css'
 
-export default function MediaCard({ post }: { post: Post }) {
+export default function PostVideoCard({ post }: { post: Post }) {
   return (
     <Card sx={{ maxWidth: 345, mt: '1rem', mb: '0 ' }}>
       <CardMedia
-        component="img"
+        component="iframe"
         height="200"
-        image={post.media}
-        alt="asobal img"
+        image={"https://www.youtube.com/embed/ZbpBIrnwAck"}
       />
-      <CardContent sx={{ pb: '5px',  backgroundColor: '#121212 !important'}} >
+      <CardContent sx={{ pb: '5px', backgroundColor: '#121212 !important' }} >
         <Typography className="PostCard-title" gutterBottom variant="body1" component="div">
           {post.title}
         </Typography>
