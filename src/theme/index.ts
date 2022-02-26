@@ -25,7 +25,7 @@ const theme = createTheme({
       defaultProps: {
         color: "secondary"
       }
-    }
+    },
   },
 });
 
