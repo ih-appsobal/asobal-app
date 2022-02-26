@@ -4,7 +4,9 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import VersusCard from '../../misc/VersusCard/VersusCard';
-import { MATCHES } from '../../../constants/data';
+import { Match } from './../matchDetails/utils';
+import { getMatches } from '../../../services/MatchesService';
+// import { MATCHES } from '../../../constants/data';
 
 import './Games.css';
 import useTitle from '../../../hooks/useTitle';
@@ -22,12 +24,16 @@ const tabsStyles = {
 
 const Games = () => {
   useTitle('Partidos')
+  const [matches, setMatches] = React.useState<Match[]>([]);
   const [topTabValue, setTopTabValue] = React.useState(0);
   const [bottomTabValue, setBottomTabValue] = React.useState(0);
 
   useEffect(() => {
-    getMatches(id as string)
-      .then((match) => setMatch(match))
+    getMatches()
+      .then((matchesList) => {
+        console.log(matchesList)
+        setMatches(matchesList)
+      })
   }, []);
 
   const handleTopTabChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -72,11 +78,14 @@ const Games = () => {
       </Box>
 
       <Box sx={{ marginY: 2, marginX: 1 }}>
-        {MATCHES.map(match => (
-          <Link to={`/partidos/${match.id}`} key={match.id}>
-            <VersusCard match={match}></VersusCard>
-          </Link>
-        ))}
+        {matches.length ? 
+          matches.map(match => (
+            <Link to={`/partidos/${match.id}`} key={match.id}>
+              <VersusCard match={match}></VersusCard>
+            </Link>
+          )) :
+          <span>Cargando...</span>
+        }
       </Box>
     </div>
   )
