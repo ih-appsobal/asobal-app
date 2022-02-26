@@ -8,6 +8,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import './MatchDetails.css';
 import useTitle from '../../../hooks/useTitle';
+import { formatDate } from '../../helpers/utilities';
 
 const getCardColor = (colorCase: string) => {
   const colors = {
@@ -39,7 +40,7 @@ const MatchDetails = () => {
       setTimeline(prepareData(match))
     }
   }, [match]);
-  
+
   return match ? (
     <div>
       <div className='MatchDetails-content'>
@@ -48,7 +49,7 @@ const MatchDetails = () => {
           <span className='MatchDetails-span'>{match.local.club.name}</span>
         </div>
         { match.status === 'No comenzado' ?
-            <span className='MatchDetails-date'>{match.date}</span>
+            <span className='MatchDetails-date'>{formatDate(match.date)}</span>
           :
             <div className="match-result">
               <span className="goals-display">{match.local.goals.length}</span>
