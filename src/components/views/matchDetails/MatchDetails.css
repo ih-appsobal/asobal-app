@@ -1,0 +1,22 @@
+.MatchDetails-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+}
+
+.MatchDetails-content .match-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MatchDetails-content .goals-display {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.MatchDetails-content .match-status {
+  font-size: 8px;
+  margin: 0 15px;
+}

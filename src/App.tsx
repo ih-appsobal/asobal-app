@@ -12,6 +12,7 @@ import Home from './components/views/home/Home';
 import Navbar from './components/misc/Navbar/Navbar';
 import Games from './components/views/games/Games';
 import News from './components/views/news/News';
+import MatchDetails from './components/views/matchDetails/MatchDetails';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="club-selector" element={<ClubSelector />} />
             <Route path="home" element={<Home />}/>
             <Route path="partidos" element={<Games />}/>
+            <Route path="partidos/:id" element={<MatchDetails />}/>
             <Route path="news" element={<News />}/>
           </Routes>
           <Navbar/>

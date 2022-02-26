@@ -5,28 +5,28 @@ import Card from '@mui/material/Card';
 import './VersusCard.css';
 
 const VersusCard = (props: any) => {
-  const { local, foreign, status, date, result } = props.match;
+  const { local, foreign, status, date } = props.match;
 
   return (
     <Box sx={{ minWidth: 275, marginBottom: 2 }}>
       <Card variant="outlined">
         <div className='VersusCard-content'>
           <div>
-            <img src={local.logo} alt={local.name} />
-            <span>{local.name}</span>
+            <img src={local.logo} alt={local.club} />
+            <span>{local.club}</span>
           </div>
           { status === 'No comenzado' ?
               <span>{date}</span>
             :
               <div className="match-result">
-                <span className="goals-display">{local.goals}</span>
+                <span className="goals-display">{local.goals.length}</span>
                 <span className="match-status">{status.toUpperCase()}</span>
-                <span className="goals-display">{foreign.goals}</span>
+                <span className="goals-display">{foreign.goals.length}</span>
               </div>
           }
           <div>
-            <img src={foreign.logo} alt={foreign.name} />
-            <span>{foreign.name}</span>
+            <img src={foreign.logo} alt={foreign.club} />
+            <span>{foreign.club}</span>
           </div>
         </div>  
       </Card>
