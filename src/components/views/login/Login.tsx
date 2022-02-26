@@ -1,26 +1,77 @@
-import React from 'react';
-import { Button, Container, TextField } from '@mui/material';
+import { useContext } from 'react';
+import { Container, TextField } from '@mui/material';
+import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from 'react-router-dom';
+import * as yup from "yup";
+import axios from 'axios';
+import { LoadingButton } from '@mui/lab';
+import { login, LoginBody } from '../../../services/AuthService';
 import Logo from  '../../../assets/img/logo.png'
 import './Login.css'
+import { UserContext } from '../../../contexts/AuthProvider';
+import { setAccessToken } from '../../../store/AcessTokenStore';
+
+const schema = yup.object().shape({
+  email: yup.string().required("Introduce tu correo electrónico").email("Introduce un correo electrónico válido"),
+  password: yup.string().required("Introduce tu contraseña").length(8, "Tu contraseña debe tener al menos 8 caracteres"),
+}).required();
 
 const Login = () => {
+  const { getUser } = useContext(UserContext)
+  let navigate = useNavigate();
+
+  const { control, handleSubmit, formState: { errors, isSubmitting }, setError } = useForm<LoginBody>({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = async (data: LoginBody) => {
+    try {
+      const response = await login(data);
+
+      setAccessToken(response.access_token)
+
+      await getUser();
+      navigate('/')
+    } catch(err) {
+      if (axios.isAxiosError(err)) {
+        setError("email", { message: err.response?.data.errors.email })
+      }
+    }
+  }
+
   return (
     <div id="Login">
       <Container maxWidth="sm">
         <img src={Logo} alt="logo"></img>
-        <form>
-          <TextField sx={{ mt: '2rem' }} fullWidth label="Email" type="email" variant="filled" />
-          <TextField sx={{ mt: '2rem' }} fullWidth label="Contraseña" variant="filled" type="password" />
-          <Button
-            sx={{ position: 'fixed', bottom: '1rem', left: '1rem', width: 'calc(100% - 2rem)' }}
+        <form onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          name="email"
+          control={control}
+          defaultValue=""
+          render={({ field: { onChange, value, name } }) => (
+            <TextField sx={{ mt: '2rem' }} error={!!errors[name]} helperText={errors[name]?.message || ""} fullWidth label="Email" type="email" variant="filled" onChange={onChange} value={value} />
+          )}
+        />
+        <Controller
+          name="password"
+          control={control}
+          defaultValue=""
+          render={({ field: { onChange, value, name } }) => (
+            <TextField sx={{ mt: '2rem' }} error={!!errors[name]} helperText={errors[name]?.message || ""} fullWidth label="Contraseña" type="password" variant="filled" onChange={onChange} value={value} />
+          )}
+        />
+          <LoadingButton
+            sx={{ my: '1rem' }}
+            loading={isSubmitting}
             fullWidth
-            variant="contained"
+            color="secondary"
             size="large"
             type="submit"
-            color="secondary"
+            variant="contained"
           >
-            Login
-          </Button>
+            Enviar
+          </LoadingButton>
         </form>
       </Container>
     </div>
