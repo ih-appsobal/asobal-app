@@ -9,7 +9,7 @@ import LoaderModal from '../../misc/LoaderModal/LoaderModal';
 import './ClubSelector.css'
 
 const ClubSelector = () => {
-  const { getUser } = useContext(UserContext)
+  const { getUser, user } = useContext(UserContext)
   const [clubs, setClubs] = useState<Club[]>([])
   const [loading, setLoading] = useState(true)
   const [currentClub, setCurrentClub] = useState<Club | null>(null)
@@ -20,6 +20,11 @@ const ClubSelector = () => {
       const response = await list()
       setLoading(false)
       setClubs(response)
+      if (user?.club) {
+        const foundClub = response.find(club => club.id === user.club)
+        
+        foundClub && setCurrentClub(foundClub)
+      }
     } catch(err) {
       console.error(err);
     }

@@ -9,7 +9,7 @@
 
 .Notifications-header {
     position: sticky;
-    top: 0;
+    top: 56px;
     background-color: var(--c-background);
     z-index: 2;
 }

@@ -19,7 +19,7 @@ const TopNavbar = () => {
     navigate(-1);
   }
   const handleChangeClub = () => {
-    console.log('change club');
+    navigate('/selecciona-equipo')
   }
 
   return (

@@ -9,12 +9,12 @@ export default function AppContent() {
 
   const { user } = useContext(UserContext);
 
-  // if (!user?.club && location.pathname !== "/selecciona-equipo") {
-  //   return <Navigate to="/selecciona-equipo" />
-  // }
+  if (!user?.club && location.pathname !== "/selecciona-equipo") {
+    return <Navigate to="/selecciona-equipo" />
+  }
 
   return (
-    <div className="AppContent" style={{ marginTop: '5rem' }}>
+    <div className="AppContent" style={{ marginTop: '56px' }}>
       <TopNavbar />
       <Outlet />
       <Navbar />
