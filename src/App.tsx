@@ -13,8 +13,6 @@ import Navbar from './components/misc/Navbar/Navbar';
 
 
 function App() {
-
-
   return (
       <div className="App">
         <BrowserRouter>
@@ -25,7 +23,7 @@ function App() {
             <Route path="club-selector" element={<ClubSelector />} />
             <Route path="home" element={<Home />}/>
           </Routes>
-          <Navbar/>
+          {/* <Navbar/> */}
         </BrowserRouter>
 
       </div>
