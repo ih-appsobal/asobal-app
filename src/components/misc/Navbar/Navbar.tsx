@@ -21,7 +21,7 @@ const Navbar = () => {
         <BottomNavigationAction label="Partidos" icon={<EmojiEvents />} />
         <BottomNavigationAction label="Noticias" icon={<NewspaperIcon />} />
         <BottomNavigationAction label="Jornada" icon={<DateRangeIcon />} />
-        <BottomNavigationAction label="Perfil" icon={<AccountCircleIcon />} />
+        <BottomNavigationAction label="Club" icon={<AccountCircleIcon />} />
         <BottomNavigationAction label="Mensajes" icon={<CircleNotificationsIcon />} />
       </BottomNavigation>
     </Paper>
