@@ -73,9 +73,8 @@ export const prepareData = (match: Match): ResponseData[] => {
       })
     })
 
-    return result
+    return result;
   }
-
-  return [...parseTeam(match.local, "local"), ...parseTeam(match.foreign, "foreign")]
+  return [...parseTeam(match.local, "local"), ...parseTeam(match.foreign, "foreign")].sort((a, b) => a.minute - b.minute)
 }
 
