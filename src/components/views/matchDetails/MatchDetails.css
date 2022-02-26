@@ -1,0 +1,59 @@
+.MatchDetails-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+}
+
+.MatchDetails-content .match-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MatchDetails-content .goals-display {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.MatchDetails-content .match-status {
+  font-size: 8px;
+  margin: 0 15px;
+}
+
+.MatchDetails-event {
+  position: relative;
+  height: 40px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MatchDetails-event:nth-child(odd) {
+  background-color: #222233;
+}
+
+.MatchDetails-event:nth-child(even) {
+  background-color: #15151f;
+}
+
+.MatchDetails-case {
+  font-size: 0.8rem;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.MatchDetails-minute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.MatchDetails-color {
+  padding: 0 4px;
+}
