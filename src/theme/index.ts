@@ -3,9 +3,13 @@ import { createTheme } from "@mui/material/styles";
 declare module '@mui/material/styles' {
   interface Palette {
     bgNotification: Palette['primary'];
+    accent: Palette['primary'];
+    backgroundColor: Palette['primary'];
   }
   interface PaletteOptions {
     bgNotification: PaletteOptions['primary'];
+    accent: PaletteOptions['primary'];
+    backgroundColor: PaletteOptions['primary'];
   }
 }
 
@@ -18,6 +22,13 @@ const theme = createTheme({
     secondary: {
       main: "#0003ff"
     },
+    accent: {
+      main: "#282f32"
+    },
+    backgroundColor: {
+      main: "#15202b"
+      // main: "#181616"
+    },
     bgNotification: {
       main: "#f4f8fc14"
     },
@@ -28,6 +39,21 @@ const theme = createTheme({
         disableElevation: true,
       },
     },
+    MuiBottomNavigation: {
+      styleOverrides: {
+        root: (props) => ({
+          backgroundColor: props.theme.palette.backgroundColor.main,
+          borderTop: `1px solid rgba(255, 255, 255, 0.15)`
+        })
+      }
+    },
+    // MuiBottomNavigationAction: {
+    //   styleOverrides: {
+    //     root: (props) => ({
+    //       color: props.theme.palette.common.black,
+    //     })
+    //   }
+    // }
   },
 });
 

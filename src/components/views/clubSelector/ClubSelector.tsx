@@ -1,13 +1,15 @@
 import { Button, Container, Grid } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Overlay from '../../../assets/img/white-overlay.svg'
+import { UserContext } from '../../../contexts/AuthProvider';
 import { Club, list } from '../../../services/ClubService';
 import { setClub } from '../../../services/UserService';
 import LoaderModal from '../../misc/LoaderModal/LoaderModal';
 import './ClubSelector.css'
 
 const ClubSelector = () => {
+  const { getUser } = useContext(UserContext)
   const [clubs, setClubs] = useState<Club[]>([])
   const [loading, setLoading] = useState(true)
   const [currentClub, setCurrentClub] = useState<Club | null>(null)
@@ -26,7 +28,9 @@ const ClubSelector = () => {
   const handleSubmit = async() => {
     if (currentClub) {
       try {
-        await setClub(currentClub.id)
+        await setClub({ club: currentClub.id })
+        await getUser()
+        
         navigate('/app')
       } catch(err) {
         console.log(err)

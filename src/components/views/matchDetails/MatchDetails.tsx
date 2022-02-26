@@ -6,6 +6,7 @@ import { Match, prepareData, ResponseData} from './utils'
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 
 import './MatchDetails.css';
+import useTitle from '../../../hooks/useTitle';
 
 const getCardColor = (colorCase: string) => {
   const colors = {
@@ -19,6 +20,7 @@ const getCardColor = (colorCase: string) => {
 }
 
 const MatchDetails = () => {
+  useTitle('Partidos')
   const { id } = useParams<{id: string}>();
   const [match, setMatch] = useState<Match>();
   const [timeline, setTimeline] = useState<ResponseData[]>();

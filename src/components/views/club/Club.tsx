@@ -9,6 +9,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import './Club.css'
 import Navbar from '../../misc/Navbar/Navbar';
+import useTitle from '../../../hooks/useTitle';
 
 interface ClubProps {
   id: string
@@ -25,6 +26,7 @@ interface ClubProps {
 }
 
 const Club = () => {
+  useTitle('Tu equipo')
 
   const clubProps: ClubProps = {
     id: "62197b86c887c7f4c55dd7cb",

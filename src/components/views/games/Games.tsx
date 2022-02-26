@@ -7,6 +7,7 @@ import VersusCard from '../../misc/VersusCard/VersusCard';
 import { MATCHES } from '../../../constants/data';
 
 import './Games.css';
+import useTitle from '../../../hooks/useTitle';
 
 function a11yProps(index: number) {
   return {
@@ -20,6 +21,7 @@ const tabsStyles = {
 }
 
 const Games = () => {
+  useTitle('Partidos')
   const [topTabValue, setTopTabValue] = React.useState(0);
   const [bottomTabValue, setBottomTabValue] = React.useState(0);
 

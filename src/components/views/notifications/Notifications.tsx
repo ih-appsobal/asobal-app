@@ -1,9 +1,11 @@
 import React from 'react';
+import useTitle from '../../../hooks/useTitle';
 import NotificationsTable from '../../notifications/NotificationsTable/NotificationsTable';
 import './Notifications.css';
 
 const Notifications = () => {
-
+    useTitle('Notificaciones')
+    
     const notifications = [
         {
             url: '/',

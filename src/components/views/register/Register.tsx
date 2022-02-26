@@ -147,7 +147,6 @@ const Register = () => {
             sx={{ my: '1rem' }}
             loading={isSubmitting}
             fullWidth
-            color="secondary"
             size="large"
             type="submit"
             variant="contained"

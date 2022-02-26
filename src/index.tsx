@@ -8,13 +8,16 @@ import theme from './theme';
 import './assets/stylesheets/variables.css';
 import './index.css';
 import { UserContextProvider } from './contexts/AuthProvider';
+import { TitleContextProvider } from './contexts/TitleProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <CssBaseline />
     <ThemeProvider theme={theme}>
       <UserContextProvider>
-        <App />
+        <TitleContextProvider>
+          <App />
+        </TitleContextProvider>
       </UserContextProvider>
     </ThemeProvider>
   </React.StrictMode>,

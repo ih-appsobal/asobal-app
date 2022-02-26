@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -8,10 +8,12 @@ import Toolbar from '@mui/material/Toolbar';
 import PolicyIcon from '@mui/icons-material/Policy';
 
 import { useNavigate } from 'react-router-dom';
+import theme from '../../../theme';
+import { TitleContext } from '../../../contexts/TitleProvider';
 
 const TopNavbar = () => {
   const navigate = useNavigate();
-  const [title, setTitle] = useState('Title');
+  const { title } = useContext(TitleContext)
 
   const handleNavBack = () => {
     navigate(-1);
@@ -22,7 +24,7 @@ const TopNavbar = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed" color="secondary" enableColorOnDark style={{ backgroundColor: theme.palette.backgroundColor.main, backgroundImage: 'none', boxShadow: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
         <Toolbar>
           <IconButton
             size="large"

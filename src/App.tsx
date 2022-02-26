@@ -9,7 +9,6 @@ import Register from './components/views/register/Register';
 import Intro from './components/views/intro/Intro';
 import ClubSelector from './components/views/clubSelector/ClubSelector';
 import Club from './components/views/club/Club';
-import TopNavbar from './components/misc/TopNavbar/TopNavbar';
 import Games from './components/views/games/Games';
 import News from './components/views/news/News';
 import MatchDetails from './components/views/matchDetails/MatchDetails';
@@ -23,7 +22,6 @@ function App() {
   return (
       <div className="App">
         <BrowserRouter>
-          <TopNavbar/>
           <Routes>
             <Route path="iniciar-sesion" element={<Login />} />
             <Route path="registro" element={<Register />} />

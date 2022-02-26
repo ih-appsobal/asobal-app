@@ -5,8 +5,10 @@ import LoaderModal from '../../misc/LoaderModal/LoaderModal';
 import MediaCard from '../../misc/PostCard/PostCard';
 import PostRow from '../../misc/PostRow/PostRow';
 import './News.css'
+import useTitle from '../../../hooks/useTitle';
 
 const News = () => {
+  useTitle('Noticias')
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(true)
 
