@@ -83,3 +83,10 @@ export const prepareData = (match: Match): ResponseData[] => {
   return [...parseTeam(match.local, "local"), ...parseTeam(match.foreign, "foreign")].sort((a, b) => a.minute - b.minute)
 }
 
+export const parseDate = (date: string) => {
+  const dateFormat = new Date(date);
+  let hours = dateFormat.getHours();
+  let minutes = dateFormat.getMinutes();
+  
+  return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+}

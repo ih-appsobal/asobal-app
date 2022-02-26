@@ -10,6 +10,6 @@ export const getMatch = (id: string): Promise<Match> => {
   return http.get(`/matches/${id}`);
 }
 
-export const getMatches = (): Promise<Match[]> => {
-  return http.get('/matches');
+export const getMatches = (id: number): Promise<Match[]> => {
+  return http.get(`/matches/fixture/${id}`);
 }

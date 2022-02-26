@@ -5,6 +5,7 @@ import { Match, prepareData, ResponseData} from './utils'
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
+import { parseDate } from './utils';
 
 import './MatchDetails.css';
 import useTitle from '../../../hooks/useTitle';
@@ -35,7 +36,6 @@ const MatchDetails = () => {
 
   useEffect(() => {
     if (match) {
-      console.log(match)
       setTimeline(prepareData(match))
     }
   }, [match]);
@@ -48,7 +48,7 @@ const MatchDetails = () => {
           <span className='MatchDetails-span'>{match.local.club.name}</span>
         </div>
         { match.status === 'No comenzado' ?
-            <span className='MatchDetails-date'>{match.date}</span>
+            <span className='MatchDetails-date'>{parseDate(match.date)}</span>
           :
             <div className="match-result">
               <span className="goals-display">{match.local.goals.length}</span>
