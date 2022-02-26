@@ -48,11 +48,6 @@ const Register = () => {
     }
   }, [errors])
 
-  useEffect(() => {
-
-  })
-  
-
   return (
     <div id="Register">
       <Container maxWidth="sm">
