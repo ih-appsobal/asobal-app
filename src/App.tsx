@@ -12,6 +12,8 @@ import Home from './components/views/home/Home';
 import Navbar from './components/misc/Navbar/Navbar';
 import Games from './components/views/games/Games';
 import News from './components/views/news/News';
+import Notifications from './components/views/notifications/Notifications';
+
 
 function App() {
 
@@ -26,6 +28,7 @@ function App() {
             <Route path="home" element={<Home />}/>
             <Route path="partidos" element={<Games />}/>
             <Route path="news" element={<News />}/>
+            <Route path="notifications" element={<Notifications />} />
           </Routes>
           <Navbar/>
         </BrowserRouter>
