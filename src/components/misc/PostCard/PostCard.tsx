@@ -5,24 +5,25 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Post } from '../../../services/PostService';
 import './PostCard.css'
 
-export default function MediaCard() {
+
+export default function MediaCard({ post }: { post: Post }) {
   return (
     <Card sx={{ maxWidth: 345, mb: "0.5rem" }}>
       <CardMedia
         component="img"
         height="100"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={post.media}
         alt="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {post.title}
         </Typography>
         <Typography className="PostCard-description" variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {post.content}
         </Typography>
       </CardContent>
       <CardActions>
