@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Container, TextField, MenuItem } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Logo from  '../../../assets/img/logo.png'
-import './Register.css'
 import { countries } from '../../../constants';
+import './Register.css'
 
 const Register = () => {
   const [country, setCountry] = React.useState("");

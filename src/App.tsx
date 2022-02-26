@@ -10,10 +10,9 @@ import Intro from './components/views/intro/Intro';
 import ClubSelector from './components/views/clubSelector/ClubSelector';
 import Home from './components/views/home/Home';
 import Navbar from './components/misc/Navbar/Navbar';
-
+import News from './components/views/news/News';
 
 function App() {
-
 
   return (
       <div className="App">
@@ -24,6 +23,7 @@ function App() {
             <Route path="intro" element={<Intro />} />
             <Route path="club-selector" element={<ClubSelector />} />
             <Route path="home" element={<Home />}/>
+            <Route path="news" element={<News />}/>
           </Routes>
           <Navbar/>
         </BrowserRouter>
