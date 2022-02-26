@@ -7,8 +7,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Logo from  '../../../assets/img/logo.png'
 import { COUNTRIES, CCAA } from '../../../constants/data';
-import './Register.css'
 import { register } from '../../../services/AuthService';
+import './Register.css'
 
 const GENDERS = ["Hombre", "Mujer", "Otro", "Prefiero no decirlo"];
 
@@ -18,7 +18,7 @@ const schema = yup.object().shape({
   email: yup.string().required("Introduce tu correo electrónico").email("Introduce un correo electrónico válido"),
   age: yup.number().typeError("Introduce tu edad").required("Introduce tu edad"),
   gender: yup.string().oneOf(GENDERS, "Elige una de las opciones anteriores").required("Elige una de las opciones anteriores"),
-  password: yup.string().required("Introduce tu contraseña").length(8, "Tu contraseña debe tener al menos 8 caracteres"),
+  password: yup.string().required("Introduce tu contraseña").test('len', "Tu contraseña debe tener al menos 8 caracteres", (val) => !!val && val.length >= 8),
   country: yup.string().required("Selecciona tu país").oneOf(COUNTRIES, "Selecciona tu país"),
   ccaa: yup.string().oneOf(CCAA, "Selecciona tu Comunidad Autónoma"),
 }).required();
@@ -48,15 +48,13 @@ const Register = () => {
     }
   }, [errors])
 
-  useEffect(() => {
-
-  })
-  
-
   return (
     <div id="Register">
       <Container maxWidth="sm">
+        <div style={{ textAlign: 'center' }}>
         <img style={{ marginTop: '2rem' }} src={ Logo } alt="Logo de la app"></img>
+        </div>
+
         <Typography variant="h4" sx={{ fontWeight: "bold", mt: '2rem' }} component="div" gutterBottom>
           ¡Bienvenido!
         </Typography>

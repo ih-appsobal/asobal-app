@@ -14,10 +14,8 @@ export const create = (opts: AxiosOptions = {}) => {
 
   http.interceptors.request.use((request) => {
     if (request && request.headers) {
-      request.headers['Authorization'] = `Bearer ${getAccessToken()}`;
-
       if (opts.useAccessToken !== false) {
-        
+        request.headers['Authorization'] = `Bearer ${getAccessToken()}`;
       } else {
         delete request.headers['Authorization'];
       }

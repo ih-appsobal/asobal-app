@@ -1,0 +1,25 @@
+.Notification {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Notification.bg-secondary {
+    background-color: var(--c-background-light);
+}
+
+
+.Notification-message {
+    padding: 1rem;
+}
+
+.Notification-message p {
+    color: var(--c-text);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.Notification a {
+    text-decoration: none;
+}
