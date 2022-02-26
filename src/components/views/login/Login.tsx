@@ -44,7 +44,7 @@ const Login = () => {
     <div id="Login">
       <Container maxWidth="sm">
         <img src={Logo} alt="logo"></img>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form>
         <Controller
           name="email"
           control={control}
@@ -66,7 +66,8 @@ const Login = () => {
             loading={isSubmitting}
             fullWidth
             size="large"
-            type="submit"
+            type="button"
+            onClick={handleSubmit(onSubmit)}
             variant="contained"
           >
             Enviar
