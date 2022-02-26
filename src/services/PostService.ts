@@ -5,6 +5,7 @@ export interface Post {
   content: string
   media: string
   visible: boolean
+  id: string
 }
 
 const http = create({
@@ -14,4 +15,8 @@ const http = create({
 
 export const list = (): Promise<Post[]> => {
   return http.get('/posts/');
+}
+
+export const getById = (id: string): Promise<Post>  => {
+  return http.get(`/posts/${id}`);
 }

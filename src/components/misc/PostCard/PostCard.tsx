@@ -7,11 +7,18 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Post } from '../../../services/PostService';
 import ShareIcon from '@mui/icons-material/Share';
+import { useNavigate } from 'react-router-dom';
 import './PostCard.css'
 
 export default function MediaCard({ post }: { post: Post }) {
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate(`/app/noticias/${post?.id}`)
+  }
+
   return (
-    <Card sx={{ maxWidth: 345, mt: '1rem', mb: '0 ' }}>
+    <Card onClick={handleNavigate} sx={{ maxWidth: 345, mt: '1rem', mb: '0 ' }}>
       <CardMedia
         component="img"
         height="200"
