@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Container, TextField } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from "yup";
 import axios from 'axios';
 import { LoadingButton } from '@mui/lab';
@@ -62,7 +62,7 @@ const Login = () => {
           )}
         />
           <LoadingButton
-            sx={{ my: '1rem' }}
+            sx={{ mt: '1rem' }}
             loading={isSubmitting}
             fullWidth
             size="large"
@@ -71,6 +71,7 @@ const Login = () => {
           >
             Enviar
           </LoadingButton>
+          <p>Si aún no tienes cuenta <Link className="c-primary" to="/registro">regístrate aquí</Link></p>
         </form>
       </Container>
     </div>

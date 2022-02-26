@@ -1,20 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
-import { withStyles } from "@mui/styles";
+import {  Card, CardContent, Typography } from "@mui/material";
 import { Post } from '../../../services/PostService';
 import './PostRow.css'
 
-
-function PostRow({ post }: { post: Post }) {
+function PostRow({ post, small } : { post: Post, small?: boolean }) {
   return (
-    <div className="PostRow" style={{ display: "inline-block" }}>
+    <div className={`PostRow ${small ? 'small' : ''}`} style={{ display: "inline-block" }}>
       <Card>
         <div className="card-content">
           <div className="card-img" style={{ backgroundImage: `url(${post.media})`}}>
           </div>
           <CardContent>
-            <Typography sx={{ mb: '0.15rem' }} color="textSecondary">
+            <Typography className="PostRow-title" sx={{ mb: '0.15rem' }} color="textSecondary">
               {post.title}
             </Typography>
             <small>
