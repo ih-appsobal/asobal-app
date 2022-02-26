@@ -3,6 +3,25 @@
   justify-content: space-around;
   align-items: center;
   height: 150px;
+  position: relative;
+}
+
+.MatchDetails-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+
+.MatchDetails-img {
+  width: 60px;
+}
+
+.MatchDetails-span {
+  font-size: 12px;
+  width: 74%;
+  text-align: center;
 }
 
 .MatchDetails-content .match-result {
@@ -19,6 +38,7 @@
 .MatchDetails-content .match-status {
   font-size: 8px;
   margin: 0 15px;
+  text-align: center;
 }
 
 .MatchDetails-event {

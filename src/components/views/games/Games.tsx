@@ -83,7 +83,7 @@ const Games = () => {
               <VersusCard match={match}></VersusCard>
             </Link>
           )) :
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '50px' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30vh' }}>
             <CircularProgress />
           </Box>
         }

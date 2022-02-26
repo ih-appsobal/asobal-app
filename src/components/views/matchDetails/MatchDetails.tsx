@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { getMatch } from '../../../services/MatchesService';
-import { MATCHES } from '../../../constants/data';
 import { Match, prepareData, ResponseData} from './utils'
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import './MatchDetails.css';
 import useTitle from '../../../hooks/useTitle';
@@ -25,8 +26,6 @@ const MatchDetails = () => {
   const [match, setMatch] = useState<Match>();
   const [timeline, setTimeline] = useState<ResponseData[]>();
 
-  const { local, foreign, status, date } = MATCHES[2];
-
   useEffect(() => {
     if (id) {
       getMatch(id as string)
@@ -36,29 +35,30 @@ const MatchDetails = () => {
 
   useEffect(() => {
     if (match) {
+      console.log(match)
       setTimeline(prepareData(match))
     }
   }, [match]);
   
-  return (
+  return match ? (
     <div>
       <div className='MatchDetails-content'>
-        <div>
-          <img src={local.logo} alt={local.club} />
-          <span>{local.club}</span>
+        <div className='MatchDetails-team'>
+          <img className='MatchDetails-img' src={match.local.club.logo} alt={match.local.club.name} />
+          <span className='MatchDetails-span'>{match.local.club.name}</span>
         </div>
-        { status === 'No comenzado' ?
-            <span>{date}</span>
+        { match.status === 'No comenzado' ?
+            <span className='MatchDetails-date'>{match.date}</span>
           :
             <div className="match-result">
-              <span className="goals-display">{local.goals.length}</span>
-              <span className="match-status">{status.toUpperCase()}</span>
-              <span className="goals-display">{foreign.goals.length}</span>
+              <span className="goals-display">{match.local.goals.length}</span>
+              <span className="match-status">{match.status.toUpperCase()}</span>
+              <span className="goals-display">{match.foreign.goals.length}</span>
             </div>
         }
-        <div>
-          <img src={foreign.logo} alt={foreign.club} />
-          <span>{foreign.club}</span>
+        <div className='MatchDetails-team'>
+          <img className='MatchDetails-img' src={match.foreign.club.logo} alt={match.foreign.club.name} />
+          <span className='MatchDetails-span'>{match.foreign.club.name}</span>
         </div>
       </div>
 
@@ -80,6 +80,10 @@ const MatchDetails = () => {
         ))}
       </div>
     </div>
+  ) : (
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '50vh' }}>
+      <CircularProgress />
+    </Box>
   )
 }
 
