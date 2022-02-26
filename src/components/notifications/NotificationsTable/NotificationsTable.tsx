@@ -13,9 +13,10 @@ const NotificationsTable = ({ notifications }: NotificationsProp) => {
         {notifications.map((notification: any, i) => {
             return (
                 <Notification
-                    url={notification.url}
+                    post={notification.post}
                     message={notification.message}
                     read={notification.read}
+                    id={notification.id}
                     key={i}
                     position={i}
                 />

@@ -1,0 +1,38 @@
+#PostDetail .img-bg {
+  background-position: center;
+  background-size: cover;
+  height: 250px;
+  position: relative;
+  display: flex;
+  z-index:-2;
+  align-items: flex-end;
+}
+
+#PostDetail {
+  padding-bottom: 5rem;
+}
+
+#PostDetail .img-bg-overlay {
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(21,32,43,1) 0%, rgb(255 255 255 / 0%) 145%, rgb(255 255 255 / 0%) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#PostDetail .title {
+  color: white;
+  line-height: 2.5rem;
+  font-size: 2.15rem;
+  margin-top: -28px;
+  z-index: 100;
+}
+
+.news-divider {
+  width: 32px;
+  height: 6px;
+  margin-bottom: 18px;
+  background-color: var(--c-primary);
+}

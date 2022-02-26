@@ -19,7 +19,7 @@ export const create = (opts: AxiosOptions = {}) => {
       } else {
         delete request.headers['Authorization'];
       }
-  
+
       return request;
     }
   });
