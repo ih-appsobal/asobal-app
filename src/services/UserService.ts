@@ -14,6 +14,7 @@ export interface User {
   country: string
   ccaa?: string
   gender: string
+  club?: string
 }
 
 export const setClub = (body: Object) => {

@@ -32,7 +32,7 @@ const Login = () => {
       setAccessToken(response.access_token)
 
       await getUser();
-      navigate('/')
+      navigate('/app')
     } catch(err) {
       if (axios.isAxiosError(err)) {
         setError("email", { message: err.response?.data.errors.email })
@@ -65,7 +65,6 @@ const Login = () => {
             sx={{ my: '1rem' }}
             loading={isSubmitting}
             fullWidth
-            color="secondary"
             size="large"
             type="submit"
             variant="contained"

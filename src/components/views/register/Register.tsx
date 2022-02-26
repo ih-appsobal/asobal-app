@@ -36,7 +36,7 @@ const Register = () => {
     try {
       await register(data)
 
-      navigate('/login')
+      navigate('/iniciar-sesion')
     } catch(err) {
       console.error(err);
     }

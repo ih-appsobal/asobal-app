@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Container, Grid } from '@mui/material';
+import { Button, Container, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Overlay from '../../../assets/img/white-overlay.svg'
@@ -27,7 +27,7 @@ const ClubSelector = () => {
     if (currentClub) {
       try {
         await setClub(currentClub.id)
-        navigate('/')
+        navigate('/app')
       } catch(err) {
         console.log(err)
       }
@@ -55,7 +55,7 @@ const ClubSelector = () => {
                         return (
                           <Grid key={index} item xs={4} sx={{ mb: '1.5rem'}}>
                             <div className={`clubItem ${currentClub?.id === club.id ? 'selected' : ''}`}onClick={() => setCurrentClub(club)}>
-                              <img src={club.logo}></img>
+                              <img src={club.logo} alt="Club logo"></img>
                             </div>
                           </Grid>
                         )
