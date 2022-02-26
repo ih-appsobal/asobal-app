@@ -28,6 +28,7 @@
 .VersusCard-content .match-status {
   font-size: 8px;
   margin: 0 15px;
+  text-align: center;
 }
 
 .VersusCard-team {

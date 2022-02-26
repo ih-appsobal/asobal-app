@@ -76,10 +76,10 @@ const Games = () => {
         </Tabs>
       </Box>
 
-      <Box sx={{ marginY: 2, marginX: 1 }}>
+      <Box sx={{ marginY: 2, marginX: 1, paddingBottom: '40px' }}>
         {matches.length ? 
           matches.map(match => (
-            <Link to={`/partidos/${match.id}`} key={match.id}>
+            <Link to={`/app/partidos/${match.id}`} key={match.id}>
               <VersusCard match={match}></VersusCard>
             </Link>
           )) :

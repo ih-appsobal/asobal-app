@@ -38,7 +38,8 @@ const MatchDetails = () => {
     if (match) {
       setTimeline(prepareData(match))
     }
-  }, [match])
+  }, [match]);
+  
   return (
     <div>
       <div className='MatchDetails-content'>
