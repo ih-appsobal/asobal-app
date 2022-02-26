@@ -1,0 +1,22 @@
+.VersusCard-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+}
+
+.VersusCard-content .match-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.VersusCard-content .goals-display {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.VersusCard-content .match-status {
+  font-size: 8px;
+  margin: 0 15px;
+}
