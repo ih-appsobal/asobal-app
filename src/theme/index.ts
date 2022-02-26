@@ -1,5 +1,14 @@
 import { createTheme } from "@mui/material/styles";
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    bgNotification: Palette['primary'];
+  }
+  interface PaletteOptions {
+    bgNotification: PaletteOptions['primary'];
+  }
+}
+
 const theme = createTheme({
   palette: {
     mode: 'dark',
@@ -8,7 +17,10 @@ const theme = createTheme({
     },
     secondary: {
       main: "#00B4FF"
-    }
+    },
+    bgNotification: {
+      main: "#f4f8fc14"
+    },
   },
   components: {
     MuiButton: {
