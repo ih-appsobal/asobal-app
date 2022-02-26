@@ -1,3 +1,5 @@
+import { Story } from "./Stories/Stories"
+
 type Card = "Amarilla" | "Roja" | "Azul"
 type Team = "local" | "foreign"
 type Type = "goal" | "card" | "foul"
@@ -47,6 +49,7 @@ export interface Match {
   date: string,
   result: "X" | "1" |  "2",
   id: string
+  stories: Story[]
 }
 
 export const prepareData = (match: Match): ResponseData[] => {

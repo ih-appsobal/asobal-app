@@ -1,0 +1,53 @@
+.Stories {
+  padding: 2rem 1rem;
+}
+
+.Stories-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Stories-story {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Stories-story img {
+  height: 100%;
+  width: fit-content;
+}
+
+.StoryOpen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 900;
+}
+
+.StoryOpen-overlay {
+  background: linear-gradient(#000000, #000000, #ffffff, #ffffff, #000000, #000000);
+  opacity: .2;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.StoryOpen .MuiSvgIcon-root {
+  position: fixed;
+  right: 28px;
+  top: 5rem;
+  cursor: pointer;
+  z-index: 1000;
+  font-weight: 800;
+  font-size: 1.5rem;
+}

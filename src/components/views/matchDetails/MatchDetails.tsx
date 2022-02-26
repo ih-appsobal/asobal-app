@@ -8,6 +8,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import './MatchDetails.css';
 import useTitle from '../../../hooks/useTitle';
+import Stories from './Stories/Stories';
 
 const getCardColor = (colorCase: string) => {
   const colors = {
@@ -41,7 +42,7 @@ const MatchDetails = () => {
   }, [match]);
   
   return match ? (
-    <div>
+    <div style={{marginBottom: '55px'}}>
       <div className='MatchDetails-content'>
         <div className='MatchDetails-team'>
           <img className='MatchDetails-img' src={match.local.club.logo} alt={match.local.club.name} />
@@ -79,6 +80,8 @@ const MatchDetails = () => {
           </div>
         ))}
       </div>
+
+      <Stories stories={match.stories} />
     </div>
   ) : (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '50vh' }}>

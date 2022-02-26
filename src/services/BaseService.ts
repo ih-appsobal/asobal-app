@@ -8,7 +8,7 @@ interface AxiosOptions {
 
 export const create = (opts: AxiosOptions = {}) => {
   const http = axios.create({
-    baseURL: "https://ih-asobal-api.herokuapp.com/api",
+    baseURL: "http://localhost:3001/api",
     ...opts,
   });
 
