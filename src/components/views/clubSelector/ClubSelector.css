@@ -3,14 +3,23 @@
   height: 75px;
   border-radius: 100%;
   margin: 0 auto;
-  background-color: rgba(73, 73, 73, 0.301);
+  background-color: rgba(0, 0, 0, 0.201);
   padding: 0.5rem;
   border: none;
+  transition: border 0.1s;
+}
+
+#ClubSelector .clubItem.selected {
+  border: 2px solid white;
 }
 
 #ClubSelector h1 {
   margin-bottom: 0px;
   padding-bottom: 0px;
+}
+
+#ClubSelector {
+  transition: background-color 0.25s;
 }
 
 #ClubSelector p {
@@ -20,6 +29,7 @@
 #ClubSelector .main-content {
   position: absolute;
   top: 0;
+  transition: background-color 0.25s;
 }
 
 #ClubSelector .bg-overlay-selector {
