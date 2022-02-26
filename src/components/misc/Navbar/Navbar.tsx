@@ -19,7 +19,7 @@ const Navbar = () => {
       >
         <BottomNavigationAction label="News" icon={<NewspaperIcon />} />
         <BottomNavigationAction label="Jornada" icon={<DateRangeIcon />} />
-        <BottomNavigationAction label="Perfil" icon={<AccountCircleIcon />} />
+        <BottomNavigationAction label="Club" icon={<AccountCircleIcon />} />
         <BottomNavigationAction label="Mensajes" icon={<CircleNotificationsIcon />} />
       </BottomNavigation>
     </Paper>
