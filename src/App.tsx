@@ -11,10 +11,9 @@ import ClubSelector from './components/views/clubSelector/ClubSelector';
 import Club from './components/views/club/Club';
 import Home from './components/views/home/Home';
 import Navbar from './components/misc/Navbar/Navbar';
-
+import News from './components/views/news/News';
 
 function App() {
-
 
   return (
       <div className="App">
@@ -26,8 +25,9 @@ function App() {
             <Route path="club-selector" element={<ClubSelector />} />
             <Route path="club" element={<Club />} />
             <Route path="home" element={<Home />}/>
+            <Route path="news" element={<News />}/>
           </Routes>
-          <Navbar/>
+          {/* <Navbar/> */}
         </BrowserRouter>
 
       </div>

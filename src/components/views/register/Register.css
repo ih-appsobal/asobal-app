@@ -1,5 +1,4 @@
 #Register {
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,4 +8,6 @@
 
 #Register img {
   max-width: 200px;
+  display: block;
+  margin: 0 auto;
 }

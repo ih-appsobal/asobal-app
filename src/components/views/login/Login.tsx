@@ -12,7 +12,7 @@ const Login = () => {
           <TextField sx={{ mt: '2rem' }} fullWidth label="Email" type="email" variant="filled" />
           <TextField sx={{ mt: '2rem' }} fullWidth label="Contraseña" variant="filled" type="password" />
           <Button
-            sx={{ mt: '2rem', py: "0.75rem" }}
+            sx={{ position: 'fixed', bottom: '1rem', left: '1rem', width: 'calc(100% - 2rem)' }}
             fullWidth
             variant="contained"
             size="large"
