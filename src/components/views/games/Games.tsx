@@ -6,7 +6,7 @@ import Tab from '@mui/material/Tab';
 import VersusCard from '../../misc/VersusCard/VersusCard';
 import { Match } from './../matchDetails/utils';
 import { getMatches } from '../../../services/MatchesService';
-// import { MATCHES } from '../../../constants/data';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import './Games.css';
 import useTitle from '../../../hooks/useTitle';
@@ -31,7 +31,6 @@ const Games = () => {
   useEffect(() => {
     getMatches()
       .then((matchesList) => {
-        console.log(matchesList)
         setMatches(matchesList)
       })
   }, []);
@@ -84,7 +83,9 @@ const Games = () => {
               <VersusCard match={match}></VersusCard>
             </Link>
           )) :
-          <span>Cargando...</span>
+          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '50px' }}>
+            <CircularProgress />
+          </Box>
         }
       </Box>
     </div>
