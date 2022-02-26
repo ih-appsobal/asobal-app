@@ -1,0 +1,24 @@
+.Notifications {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.Notifications-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--c-background);
+    z-index: 2;
+}
+
+.Notifications-title {
+    width: 80vw;
+    padding-left: 2rem;
+}
+
+.Notifications-hr {
+    width: 100%;
+}
