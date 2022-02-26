@@ -10,6 +10,7 @@ import Intro from './components/views/intro/Intro';
 import ClubSelector from './components/views/clubSelector/ClubSelector';
 import Club from './components/views/club/Club';
 import Home from './components/views/home/Home';
+import TopNavbar from './components/misc/TopNavbar/TopNavbar';
 import Navbar from './components/misc/Navbar/Navbar';
 import Games from './components/views/games/Games';
 import News from './components/views/news/News';
@@ -22,6 +23,7 @@ function App() {
   return (
       <div className="App">
         <BrowserRouter>
+          <TopNavbar/>
           <Routes>
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
