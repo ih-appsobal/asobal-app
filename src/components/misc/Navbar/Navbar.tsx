@@ -4,6 +4,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 import DateRangeIcon from '@mui/icons-material/DateRange';
+import EmojiEvents from '@mui/icons-material/EmojiEvents';
 
 const Navbar = () => {
   const [value, setValue] = useState(0);
@@ -17,7 +18,8 @@ const Navbar = () => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="News" icon={<NewspaperIcon />} />
+        <BottomNavigationAction label="Partidos" icon={<EmojiEvents />} />
+        <BottomNavigationAction label="Noticias" icon={<NewspaperIcon />} />
         <BottomNavigationAction label="Jornada" icon={<DateRangeIcon />} />
         <BottomNavigationAction label="Perfil" icon={<AccountCircleIcon />} />
         <BottomNavigationAction label="Mensajes" icon={<CircleNotificationsIcon />} />
