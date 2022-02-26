@@ -26,23 +26,19 @@ const Notification = ({ url, read, message, position }: NotificationProps) => {
     const handleRedirectPost = () => {
         //patch
         navigate(`/posts/${url}`)
-
     }
 
     const handleDelete = () => {
          //delete
         setDeleting(true)
-
      }
 
     const classCalculate =() => {
-
         if (position === 0 || (position && position % 2 == 0)) {
             return 'bg-primary';
         } else {
             return 'bg-secondary';
         };
-
     };
 
     const backgroundNotification = classCalculate();

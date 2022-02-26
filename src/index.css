@@ -3,3 +3,20 @@ body {
   min-height: 100vh;
   color: white !important;
 }
+
+.c-primary {
+  color: #00B4FF;
+}
+
+.c-secondary {
+  color: #00B4FF;
+}
+
+.mt-0 {
+  margin-top: 0px !important;
+}
+
+
+.mb-0 {
+  margin-bottom: 0px !important;
+}

@@ -4,9 +4,6 @@ import { Post, list } from '../../../services/PostService';
 import LoaderModal from '../../misc/LoaderModal/LoaderModal';
 import MediaCard from '../../misc/PostCard/PostCard';
 import PostRow from '../../misc/PostRow/PostRow';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import './News.css'
 
 const News = () => {
@@ -32,32 +29,36 @@ const News = () => {
       <Container>
         { loading || !posts.length ? <LoaderModal /> : (
           <div>
-            <h1>Noticias</h1>
-            <Grid sx={{ mb: "0.5rem" }} container spacing={1}>
-              {
-                posts.slice(0, 4).map(post => {
-                  return post.visible && (
-                    <Grid item xs={6}>
-                      <MediaCard post={post}/>
-                    </Grid>
-                  )
-                })
-              }
-            </Grid>
-            <MediaCard post={posts[4]}/>
-            <hr></hr>
+            <h1 className="mb-0">Últimas noticias</h1>
+            <div className='news-divider'></div>
             <div className="scrolling-wrapper-flexbox" >
               {
                 posts.slice(5,9).map(post => {
-                  return post.visible && (<PostRow post={post}/>)
+                  return post.visible && (<PostRow small post={post}/>)
                 })
               }
             </div>
-            <hr></hr>
+            <MediaCard post={posts[4]}/>
+            <MediaCard post={posts[5]}/>
+            <h1 className="mb-0">Para tí</h1>
+            <div className='news-divider'></div>
+            <div className="scrolling-wrapper-flexbox" >
+              {
+                posts.slice(5,9).map(post => {
+                  return post.visible && (<PostRow small post={post}/>)
+                })
+              }
+            </div>
+            <h1 className="mb-0">Internacional</h1>
+            <div className='news-divider'></div>
             <div style={{ marginTop: '0.5rem'}}>
               {
-                posts.slice(9,13).map(post => {
-                  return post.visible && (<PostRow post={post}/>)
+                posts.slice(7,13).map(post => {
+                  return post.visible && (
+                    <div style={{ marginTop: '0.5rem'}}>
+                       <PostRow post={post}/>
+                    </div>
+                  )
                 })
               }
             </div>

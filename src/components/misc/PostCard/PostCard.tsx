@@ -6,20 +6,20 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Post } from '../../../services/PostService';
+import ShareIcon from '@mui/icons-material/Share';
 import './PostCard.css'
-
 
 export default function MediaCard({ post }: { post: Post }) {
   return (
-    <Card sx={{ maxWidth: 345, mb: "0.5rem" }}>
+    <Card sx={{ maxWidth: 345, mt: '1rem', mb: '0 ' }}>
       <CardMedia
         component="img"
-        height="100"
+        height="200"
         image={post.media}
-        alt="green iguana"
+        alt="asobal img"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+      <CardContent sx={{ pb: '5px'}} >
+        <Typography className="PostCard-title" gutterBottom variant="body1" component="div">
           {post.title}
         </Typography>
         <Typography className="PostCard-description" variant="body2" color="text.secondary">
@@ -27,8 +27,7 @@ export default function MediaCard({ post }: { post: Post }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button color="secondary" size="small">Share</Button>
-        <Button color="secondary" size="small">Lee</Button>
+        <Button color="primary" size="small">Comparte <ShareIcon sx={{ ml: '0.25rem', fontSize: '12px', mt: '0px'}}/></Button>
       </CardActions>
     </Card>
   );
