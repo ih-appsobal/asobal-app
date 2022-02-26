@@ -7,8 +7,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Logo from  '../../../assets/img/logo.png'
 import { COUNTRIES, CCAA } from '../../../constants/data';
-import './Register.css'
 import { register } from '../../../services/AuthService';
+import './Register.css'
 
 const GENDERS = ["Hombre", "Mujer", "Otro", "Prefiero no decirlo"];
 
@@ -51,7 +51,10 @@ const Register = () => {
   return (
     <div id="Register">
       <Container maxWidth="sm">
+        <div style={{ textAlign: 'center' }}>
         <img style={{ marginTop: '2rem' }} src={ Logo } alt="Logo de la app"></img>
+        </div>
+
         <Typography variant="h4" sx={{ fontWeight: "bold", mt: '2rem' }} component="div" gutterBottom>
           ¡Bienvenido!
         </Typography>

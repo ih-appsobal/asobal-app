@@ -4,7 +4,7 @@ import './LoaderModal.css'
 const LoaderModal = () => {
   return (
     <div className="LoaderModal">
-      <CircularProgress color="secondary"/>
+      <CircularProgress color="primary"/>
     </div>
   );
 };

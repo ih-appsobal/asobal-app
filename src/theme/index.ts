@@ -18,12 +18,12 @@ const theme = createTheme({
     },
     MuiInputBase: {
       defaultProps: {
-        color: "secondary"
+        color: "primary"
       }
     },
     MuiInputLabel: {
       defaultProps: {
-        color: "secondary"
+        color: "primary"
       }
     },
   },

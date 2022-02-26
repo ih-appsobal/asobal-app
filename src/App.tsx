@@ -27,7 +27,7 @@ function App() {
             <Route path="partidos" element={<Games />}/>
             <Route path="news" element={<News />}/>
           </Routes>
-          <Navbar/>
+          {/* <Navbar/> */}
         </BrowserRouter>
 
       </div>
