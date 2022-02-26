@@ -27,8 +27,13 @@ export interface ResponseData {
   team: Team
 }
 
+interface ClubType {
+  logo: string,
+  name: string
+}
+
 interface TeamData {
-  club: string
+  club: ClubType
   goals: number[]
   cards: ({ minute: number, color: Card })[]
   fouls: number[],
