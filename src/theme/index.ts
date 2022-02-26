@@ -27,7 +27,6 @@ const theme = createTheme({
     },
     backgroundColor: {
       main: "#15202b"
-      // main: "#181616"
     },
     bgNotification: {
       main: "#f4f8fc14"
@@ -43,7 +42,8 @@ const theme = createTheme({
       styleOverrides: {
         root: (props) => ({
           backgroundColor: props.theme.palette.backgroundColor.main,
-          borderTop: `1px solid rgba(255, 255, 255, 0.15)`
+          borderTop: `1px solid rgba(255, 255, 255, 0.15)`,
+          borderBottom: `1px solid ${props.theme.palette.backgroundColor.main}`
         })
       }
     },
