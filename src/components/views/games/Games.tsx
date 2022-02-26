@@ -30,11 +30,12 @@ const Games = () => {
   const [bottomTabValue, setBottomTabValue] = React.useState(0);
 
   useEffect(() => {
-    getMatches()
+    setMatches([]);
+    getMatches(bottomTabValue + 1)
       .then((matchesList) => {
         setMatches(matchesList)
       })
-  }, []);
+  }, [bottomTabValue]);
 
   const handleTopTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTopTabValue(newValue);
@@ -55,7 +56,6 @@ const Games = () => {
         >
           <Tab label="Horarios" {...a11yProps(0)} />
           <Tab label="Clasificación" {...a11yProps(1)} />
-          {/* <Tab label="Rankings" {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
 
@@ -85,7 +85,7 @@ const Games = () => {
                     <VersusCard match={match}></VersusCard>
                   </Link>
                 )) :
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '50px' }}>
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '35vh' }}>
                   <CircularProgress />
                 </Box>}
             </Box></>

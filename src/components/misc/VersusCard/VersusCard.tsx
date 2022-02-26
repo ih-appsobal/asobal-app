@@ -1,19 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import { parseDate } from '../../views/matchDetails/utils';
 
 import './VersusCard.css';
 
 const VersusCard = (props: any) => {
   const { local, foreign, status, date } = props.match;
-
-  const parseDate = (date: string) => {
-    const dateFormat = new Date(date);
-    let hours = dateFormat.getHours();
-    let minutes = dateFormat.getMinutes();
-    
-    return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
-  }
 
   return (
     <Box sx={{ minWidth: 275, marginBottom: 2 }}>
