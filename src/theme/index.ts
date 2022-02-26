@@ -28,16 +28,6 @@ const theme = createTheme({
         disableElevation: true,
       },
     },
-    MuiInputBase: {
-      defaultProps: {
-        color: "primary"
-      }
-    },
-    MuiInputLabel: {
-      defaultProps: {
-        color: "primary"
-      }
-    },
   },
 });
 
