@@ -28,6 +28,24 @@ const Games = () => {
           <Tab label="Rankings" {...a11yProps(2)} />
         </Tabs>
       </Box>
+
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="scrollable auto tabs example"
+        >
+          <Tab label="Jornada 1" />
+          <Tab label="Jornada 2" />
+          <Tab label="Jornada 3" />
+          <Tab label="Jornada 4" />
+          <Tab label="Jornada 5" />
+          <Tab label="Jornada 6" />
+          <Tab label="Jornada 7" />
+        </Tabs>
+      </Box>
     </div>
   )
 }
