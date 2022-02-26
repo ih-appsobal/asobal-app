@@ -47,13 +47,20 @@ const theme = createTheme({
         })
       }
     },
-    // MuiBottomNavigationAction: {
-    //   styleOverrides: {
-    //     root: (props) => ({
-    //       color: props.theme.palette.common.black,
-    //     })
-    //   }
-    // }
+    MuiTable: {
+      styleOverrides: {
+        root: (props => ({
+          backgroundColor: props.theme.palette.backgroundColor.main
+        }))
+      }
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: (props => ({
+          fontSize: '0.7rem'
+        }))
+      }
+    }
   },
 });
 
