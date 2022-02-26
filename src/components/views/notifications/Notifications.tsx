@@ -42,7 +42,6 @@ const Notifications = () => {
             <div className='Notifications-title'>
                 <h1>Tus avisos</h1>
             </div>
-            <hr className='Notifications-hr' />
         </div>
         <NotificationsTable notifications={notifications} />
     </div>

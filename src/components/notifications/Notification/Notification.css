@@ -1,4 +1,5 @@
 .Notification {
+    position: relative;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -6,9 +7,26 @@
 }
 
 .Notification.bg-secondary {
-    background-color: var(--c-background-light);
+    background-color: #00000047;
 }
 
+.Notification .notification-actions {
+    position: absolute;
+    bottom: 12px;
+    right: 0px;
+}
+
+.Notification .notification-actions * {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    font-size: 1.35rem;
+    color: white;
+}
+
+.Notification .notification-actions .eye-disabled {
+    pointer-events: none;
+    opacity: 0.25;
+}
 
 .Notification-message {
     padding: 1rem;
@@ -16,10 +34,125 @@
 
 .Notification-message p {
     color: var(--c-text);
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.Notification-message small {
+    color: rgb(167, 167, 167);
 }
 
 .Notification a {
     text-decoration: none;
+}
+
+.fade-out-left {
+    -webkit-animation: fade-out-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: fade-out-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes fade-out-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+        display: block;
+        height: auto;
+         background-color: inherit;
+    }
+
+    99% {
+        -webkit-transform: translateX(-50px);
+        transform: translateX(-50px);
+        opacity: 0;
+        display: block;
+        height: auto;
+        background-color: rgba(255, 0, 0, 0.459);
+    }
+
+    100% {
+        -webkit-transform: translateX(-50px);
+        transform: translateX(-50px);
+        opacity: 0;
+        display: none;
+        height: 0;
+        background-color: red;
+    }
+}
+
+@keyframes fade-out-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+        display: block;
+        height: auto;
+    }
+
+    99% {
+        -webkit-transform: translateX(-50px);
+        transform: translateX(-50px);
+        opacity: 0;
+        display: block;
+        height: auto;
+    }
+
+    100% {
+        -webkit-transform: translateX(-50px);
+        transform: translateX(-50px);
+        opacity: 0;
+        display: none;
+        height: 0;
+    }
+}
+
+.fade-to-red {
+    -webkit-animation: fade-to-red 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: fade-to-red 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes fade-to-red {
+    0% {
+        display: block;
+        background-color: inherit;
+        height: auto;
+    }
+
+    99% {
+        display: block;
+        background-color: rgba(255, 0, 0, 0.459);
+        height: auto;
+    }
+
+    100% {
+        display: none;
+        background-color: red;
+        height: 0;
+    }
+}
+
+@keyframes fade-to-red {
+    0% {
+        display: block;
+        background-color: inherit;
+        height: auto;
+    }
+
+    99% {
+        display: block;
+        background-color: rgba(255, 0, 0, 0.459);
+        height: auto;
+    }
+
+    100% {
+        display: none;
+        background-color: red;
+        height: 0;
+    }
 }

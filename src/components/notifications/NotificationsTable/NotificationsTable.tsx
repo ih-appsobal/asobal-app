@@ -20,7 +20,7 @@ const NotificationsTable = ({ notifications }: NotificationsProp) => {
                     position={i}
                 />
             )
-            
+
         })}
     </div>
   )

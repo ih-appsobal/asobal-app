@@ -1,3 +1,4 @@
+import { Match } from './../components/views/matchDetails/utils';
 export const COUNTRIES = [
   "España",
   "Afganistán",
@@ -217,3 +218,81 @@ export const CCAA = [
   "Principado de Asturias",
   "Región de Murcia",
 ];
+
+export const MATCHES: Match[] = [
+  {
+    status: 'No comenzado',
+    local: {
+      club: 'kjdlaksjdlsj',
+      logo: 'https://res.cloudinary.com/dwta0wgpp/image/upload/v1645824762/asobal/1.svg',
+      goals: [],
+      cards: [],
+      fouls: []
+    },
+    foreign: {
+      club: 'kjdlaksjdlsj',
+      logo: 'https://res.cloudinary.com/dwta0wgpp/image/upload/v1645824762/asobal/2.svg',
+      goals: [],
+      cards: [],
+      fouls: []
+    },
+    date: '14:00',
+    result: '1',
+    id: '1212'
+  },
+  {
+    status: 'Descanso',
+    local: {
+      club: 'kjdlaksjdlsj',
+      logo: 'https://res.cloudinary.com/dwta0wgpp/image/upload/v1645824762/asobal/3.svg',
+      goals: [3],
+      cards: [
+        {color: 'Amarilla', minute: 15},
+        {color: 'Roja', minute: 23},
+        {color: 'Azul', minute: 29}
+      ],
+      fouls: [1, 6, 22]
+    },
+    foreign: {
+      club: 'kjdlaksjdlsj',
+      logo: 'https://res.cloudinary.com/dwta0wgpp/image/upload/v1645824762/asobal/4.svg',
+      goals: [10, 27],
+      cards: [
+        {color: 'Amarilla', minute: 15},
+        {color: 'Roja', minute: 23},
+        {color: 'Azul', minute: 29}
+      ],
+      fouls: [12, 15]
+    },
+    date: '14:00',
+    result: '2',
+    id: '1233'
+  },
+  {
+    status: 'Terminado',
+    local: {
+      club: 'dsdasdasd121',
+      logo: 'https://res.cloudinary.com/dwta0wgpp/image/upload/v1645824762/asobal/1.svg',
+      goals: [],
+      cards: [
+        {color: 'Amarilla', minute: 8},
+        {color: 'Amarilla', minute: 17},
+        {color: 'Amarilla', minute: 21}
+      ],
+      fouls: [12, 16, 25]
+    },
+    foreign: {
+      club: 'dsdasdasd121',
+      logo: 'https://res.cloudinary.com/dwta0wgpp/image/upload/v1645824762/asobal/2.svg',
+      goals: [],
+      cards: [
+        {color: 'Roja', minute: 20},
+        {color: 'Amarilla', minute: 28}
+      ],
+      fouls: [1, 23]
+    },
+    date: '14:00',
+    result: 'X',
+    id: 'sdlasd'
+  }
+]
