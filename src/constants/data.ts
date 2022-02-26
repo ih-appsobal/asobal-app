@@ -1,4 +1,4 @@
-module.exports.countries = [
+export const COUNTRIES = [
   "España",
   "Afganistán",
   "Albania",
@@ -195,3 +195,25 @@ module.exports.countries = [
   "Zambia",
   "Zimbabue"
 ]
+
+export const CCAA = [
+  "Andalucia",
+  "Aragón",
+  "Canarias",
+  "Cantabria",
+  "Castilla y León",
+  "Castilla-La Mancha",
+  "Cataluña",
+  "Ceuta",
+  "Comunidad Valenciana",
+  "Comunidad de Madrid",
+  "Extremadura",
+  "Galicia",
+  "Islas Baleares",
+  "La Rioja",
+  "Melilla",
+  "Navarra",
+  "País Vasco",
+  "Principado de Asturias",
+  "Región de Murcia",
+];
