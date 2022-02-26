@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
@@ -24,6 +24,11 @@ const Games = () => {
   useTitle('Partidos')
   const [topTabValue, setTopTabValue] = React.useState(0);
   const [bottomTabValue, setBottomTabValue] = React.useState(0);
+
+  useEffect(() => {
+    getMatches(id as string)
+      .then((match) => setMatch(match))
+  }, []);
 
   const handleTopTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTopTabValue(newValue);

@@ -11,3 +11,7 @@ export const getMatch = (id: string): Promise<Match> => {
   return Promise.resolve(MATCHES[1])
   // return http.get(`/matches/${id}`)
 }
+
+export const getMatches = (): Promise<Match[]> => {
+  return http.get('/matches');
+}
