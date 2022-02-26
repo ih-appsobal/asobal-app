@@ -7,16 +7,24 @@ import './VersusCard.css';
 const VersusCard = (props: any) => {
   const { local, foreign, status, date } = props.match;
 
+  const parseDate = (date: string) => {
+    const dateFormat = new Date(date);
+    let hours = dateFormat.getHours();
+    let minutes = dateFormat.getMinutes();
+    
+    return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+  }
+
   return (
     <Box sx={{ minWidth: 275, marginBottom: 2 }}>
       <Card variant="outlined">
         <div className='VersusCard-content'>
-          <div>
-            <img src={local.logo} alt={local.club} />
-            <span>{local.club}</span>
+          <div className='VersusCard-team'>
+            <img src={local.club.logo} alt={local.club.club} />
+            <span>{local.club.name}</span>
           </div>
           { status === 'No comenzado' ?
-              <span>{date}</span>
+              <span className='VersusCard-date'>{parseDate(date)}</span>
             :
               <div className="match-result">
                 <span className="goals-display">{local.goals.length}</span>
@@ -24,9 +32,9 @@ const VersusCard = (props: any) => {
                 <span className="goals-display">{foreign.goals.length}</span>
               </div>
           }
-          <div>
-            <img src={foreign.logo} alt={foreign.club} />
-            <span>{foreign.club}</span>
+          <div className='VersusCard-team'>
+            <img src={foreign.club.logo} alt={foreign.club.name} />
+            <span>{foreign.club.name}</span>
           </div>
         </div>  
       </Card>

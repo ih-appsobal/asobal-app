@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import VersusCard from '../../misc/VersusCard/VersusCard';
-import { MATCHES } from '../../../constants/data';
+import { Match } from './../matchDetails/utils';
+import { getMatches } from '../../../services/MatchesService';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import './Games.css';
 import useTitle from '../../../hooks/useTitle';
@@ -22,8 +24,16 @@ const tabsStyles = {
 
 const Games = () => {
   useTitle('Partidos')
+  const [matches, setMatches] = React.useState<Match[]>([]);
   const [topTabValue, setTopTabValue] = React.useState(0);
   const [bottomTabValue, setBottomTabValue] = React.useState(0);
+
+  useEffect(() => {
+    getMatches()
+      .then((matchesList) => {
+        setMatches(matchesList)
+      })
+  }, []);
 
   const handleTopTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTopTabValue(newValue);
@@ -66,12 +76,17 @@ const Games = () => {
         </Tabs>
       </Box>
 
-      <Box sx={{ marginY: 2, marginX: 1 }}>
-        {MATCHES.map(match => (
-          <Link to={`/partidos/${match.id}`} key={match.id}>
-            <VersusCard match={match}></VersusCard>
-          </Link>
-        ))}
+      <Box sx={{ marginY: 2, marginX: 1, paddingBottom: '40px' }}>
+        {matches.length ? 
+          matches.map(match => (
+            <Link to={`/app/partidos/${match.id}`} key={match.id}>
+              <VersusCard match={match}></VersusCard>
+            </Link>
+          )) :
+          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '50px' }}>
+            <CircularProgress />
+          </Box>
+        }
       </Box>
     </div>
   )

@@ -3,12 +3,21 @@
   justify-content: space-around;
   align-items: center;
   height: 150px;
+  position: relative;
 }
 
 .VersusCard-content .match-result {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.VersusCard-date {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
 }
 
 .VersusCard-content .goals-display {
@@ -19,4 +28,23 @@
 .VersusCard-content .match-status {
   font-size: 8px;
   margin: 0 15px;
+  text-align: center;
+}
+
+.VersusCard-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+
+.VersusCard-team span {
+  font-size: 12px;
+  width: 74%;
+  text-align: center;
+}
+
+.VersusCard-content img {
+  width: 60px;
 }
